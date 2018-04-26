@@ -10,6 +10,8 @@ namespace PA2
     {
         static void Main(string[] args)
         {
+            Driver driver = new Driver();
+            driver.Run();
         }
     }
 }
