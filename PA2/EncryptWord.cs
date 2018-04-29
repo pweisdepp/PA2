@@ -1,10 +1,7 @@
 // AUTHOR: Peter Weisdepp
 // FILENAME: EncryptWord.cs
-// DATE: 04/15/18
-// REVISION HISTORY: PA1
-
-using System;
-using System.Collections;
+// DATE: 04/29/18
+// REVISION HISTORY: PA2
 
 /*
  * Description:
@@ -30,6 +27,9 @@ using System.Collections;
  * For the getEncryptedWord() method to function, it is assumed that the user has supplied a word that is at least 4 characters
  * long and only consist of the 26 letters of the English alphabet. 
  */
+
+using System;
+using System.Collections;
 
 public class EncryptWord
 {

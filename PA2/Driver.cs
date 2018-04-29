@@ -1,4 +1,16 @@
-﻿using System;
+﻿// AUTHOR: Peter Weisdepp
+// FILENAME: Driver.cs
+// DATE: 04/29/18
+// REVISION HISTORY: PA2
+
+/*
+ * Description: Driver.cs is a simple driver for the EncryptWord class. The driver
+ * instantiates an EncryptWord, then demonstrates the functionality of the EncryptWord
+ * class using the console. The program runs in standalone fashion, ie no user input
+ * is taken.
+ */ 
+
+using System;
 
 namespace PA2
 {
@@ -9,11 +21,11 @@ namespace PA2
             Console.WriteLine("Welcome to the EncryptWord driver");
             EncryptWord ew = new EncryptWord();
 
-            Console.WriteLine("Setting word to 'bodacious'");
+            Console.WriteLine("Setting word to 'Bodacious'");
             ew.setEncryptedWord("Bodacious");
             Console.WriteLine("");
 
-            Console.Write("Print encrypted form of 'bodacious': ");
+            Console.Write("Print encrypted form of 'Bodacious': ");
             Console.WriteLine(ew.getEncryptedWord());
             Console.WriteLine("");
 
@@ -50,6 +62,13 @@ namespace PA2
             ew.reset();
             Console.Write("New guess total: ");
             Console.WriteLine(ew.getTotalGuesses());
+            Console.WriteLine("");
+
+            Console.WriteLine("Setting new word: 'Tropique'");
+            ew.setEncryptedWord("Tropique");
+            Console.WriteLine("");
+            Console.Write("Print encrypted form of 'Tropique: ");
+            Console.WriteLine(ew.getEncryptedWord());
 
             Console.WriteLine("Press any key to close window...");
             Console.ReadLine(); // use so console window doesn't disappear immediately
