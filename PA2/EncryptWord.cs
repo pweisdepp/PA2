@@ -45,12 +45,6 @@ public class EncryptWord
     private int shift;
 
     /// <summary>
-    /// Default Caeser shift value. This is used in the constructor when no shift value is specified. 
-    /// This field might be changed to a random value in the future.
-    /// </summary>
-    private const int DEFAULT_SHIFT = 5;
-
-    /// <summary>
     /// Word to be encapsulated and encoded. 
     /// </summary>
     private String word;
@@ -62,13 +56,13 @@ public class EncryptWord
 
 
     /// <summary>
-    /// Default EncryptWord constructor, initialized with the default shift value
+    /// Default EncryptWord constructor, initialized with the random shift value
     /// </summary>
     /// preconditions: none
-    /// postconditions: EncryptWord initialized with the default shift value
+    /// postconditions: EncryptWord initialized with a random default value
     public EncryptWord()
     {
-        this.shift = DEFAULT_SHIFT;
+        this.shift = getRandom();
     }
 
     /// <summary>
@@ -84,7 +78,7 @@ public class EncryptWord
     }
 
     /// <summary>
-    /// EncryptWord constructor initialized with the given word and the default shift value.
+    /// EncryptWord constructor initialized with the given word and a random shift value.
     /// Note: supplied word must be 4 or more characters long, otherwise the encapsulated
     /// word will remain empty.
     /// </summary>
@@ -102,7 +96,7 @@ public class EncryptWord
         {
             this.word = word;
         }
-        this.shift = DEFAULT_SHIFT;
+        this.shift = getRandom();
     }
 
     /// <summary>
@@ -161,7 +155,6 @@ public class EncryptWord
         this.word = newWord;
     }
 
-
     /// <summary>
     /// Method to guess the value of the cipher shift. Returns true if the guess was correct, false otherwise.
     /// Note: you can still guess the shift value of the cipher even if no word has been encapsulated. 
@@ -179,7 +172,6 @@ public class EncryptWord
         }
         else return false;
     }
-
 
     /// <summary>
     /// Reset the EncryptWord, clearing the encapsulated word and clearing all guesses that have been made.
@@ -262,5 +254,18 @@ public class EncryptWord
             return avgGuess;
         }
         else return 0;
+    }
+
+    /// <summary>
+    /// Get a random number between 1 and 26, used to make the shift guessing more interesting. 
+    /// </summary>
+    /// <returns>Random number between 1-26</returns>
+    /// preconditions: None
+    /// postconditions: None
+    private int getRandom()
+    {
+        Random rand = new Random();
+        int randShift = rand.Next(1, 26);
+        return randShift;
     }
 }

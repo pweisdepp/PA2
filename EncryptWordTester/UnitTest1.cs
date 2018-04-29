@@ -9,7 +9,7 @@ namespace EncryptWordTester
         [TestMethod]
         public void TestSetWord()
         {
-            EncryptWord ew = new EncryptWord();
+            EncryptWord ew = new EncryptWord(5);
             ew.setEncryptedWord("Tester");
             Assert.AreEqual("Yjxyjw", ew.getEncryptedWord());
         }
@@ -17,7 +17,7 @@ namespace EncryptWordTester
         [TestMethod]
         public void testConstructorString()
         {
-            EncryptWord ew = new EncryptWord("Tester");
+            EncryptWord ew = new EncryptWord("Tester", 5);
             Assert.AreEqual("Yjxyjw", ew.getEncryptedWord());
         }
 

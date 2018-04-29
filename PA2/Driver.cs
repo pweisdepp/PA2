@@ -6,9 +6,12 @@ namespace PA2
     {
         public void Run()
         {
-            Console.WriteLine("");
+            Console.WriteLine("Welcome to the EncryptWord driver");
             EncryptWord ew = new EncryptWord();
-            ew.setEncryptedWord("Tester");
+
+            Console.WriteLine("Setting word to 'bodacious'");
+            ew.setEncryptedWord("Bodacious");
+
             Console.WriteLine(ew.getEncryptedWord());
 
 
