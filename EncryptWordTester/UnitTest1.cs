@@ -59,6 +59,5 @@ namespace EncryptWordTester
             ew.guessCipherValue(10);
             Assert.AreEqual(10, ew.getTotalGuesses());
         }
-
     }
 }
