@@ -39,6 +39,8 @@ public class EncryptWord
     /// </summary>
     private const int ALPHABET_SIZE = 26;
 
+    private const int MINIMIM_WORD_LENGTH = 4;
+
     /// <summary>
     /// Size of the Caeser shift. A value of 5 will encode the letter 'f' as 'k', for example.
     /// </summary>
@@ -88,7 +90,7 @@ public class EncryptWord
     /// encapsulated word set to the given word parameter
     public EncryptWord(string word)
     {
-        if (word.Length < 4)
+        if (word.Length < MINIMIM_WORD_LENGTH)
         {
             this.word = "";
         }
@@ -111,7 +113,7 @@ public class EncryptWord
     /// by the shift parameter, and the encapsulated word set to the given word parameter
     public EncryptWord(string word, int shift)
     {
-        if (word.Length < 4)
+        if (word.Length < MINIMIM_WORD_LENGTH)
         {
             this.word = "";
         }
